@@ -1,0 +1,72 @@
+<title>Nut</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+* {
+  font-family: "Shadows Into Light", cursive;
+}
+
+.container {
+  height: 200px;
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 3s;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Edge, Opera and Firefox */
+}
+
+.center:active > h1 {
+  color: blue;
+  font-size: 200px;
+  transition: 3s;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+</style>
+
+<div id="counter">Score: <span id="score">0</span></div>
+
+<div class="container">
+
+<div class="center">
+<h1 onclick="playSound('https://www.myinstants.com/media/sounds/nut_ZKo5FA9.mp3'); increment();">
+Nut.
+</h1>
+<p>Click it O_o</p>
+
+</div>
+<script>
+
+function playSound(url) {
+    var a = new Audio(url);
+    a.play();
+}
+
+score = 0;
+
+function increment() {
+    var count = document.getElementById("score");
+    score = score + 1;
+    console.log("Score updated: " + score);
+    count.innerHTML = score;
+}
+</script>
+</div>
